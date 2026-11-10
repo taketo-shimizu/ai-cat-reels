@@ -1,0 +1,3 @@
+# 監視するAI猫アカウントの Instagram ユーザー名 (1行1つ、@ なし)
+# Business Discovery で取得するため、相手がビジネス/クリエイターアカウントである必要がある
+cutepawframe

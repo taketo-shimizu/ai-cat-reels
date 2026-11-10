@@ -1,0 +1,17 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.coverage
+data/app.db
+data/app.db-*
+data/tmp/*
+!data/tmp/.gitkeep
+data/videos/*
+!data/videos/.gitkeep
+logs/*
+!logs/.gitkeep
+.DS_Store

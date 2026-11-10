@@ -1,0 +1,8 @@
+# 収集対象のハッシュタグ (1行1つ、# なし)
+# 注意: 7日間でユニーク30タグ制限。初期値は10個以内に抑える。
+aicat
+aicats
+aianimals
+aivideo
+funnycat
+catsofinstagram
