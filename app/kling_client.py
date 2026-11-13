@@ -91,6 +91,7 @@ def create_text2video_task(cfg: Config, prompt: str, negative_prompt: str | None
         "mode": cfg.kling_mode,
         "duration": str(cfg.kling_duration),
         "aspect_ratio": "9:16",
+        "sound": cfg.kling_sound,
     }
     if negative_prompt:
         body["negative_prompt"] = negative_prompt

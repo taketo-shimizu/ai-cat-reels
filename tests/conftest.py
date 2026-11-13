@@ -33,6 +33,7 @@ def cfg() -> Config:
         kling_model="kling-v2-6",
         kling_mode="std",
         kling_duration="5",
+        kling_sound="on",
         anthropic_api_key="ant_test",
         claude_model="claude-sonnet-4-6",
         dry_run=False,

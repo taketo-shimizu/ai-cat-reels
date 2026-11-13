@@ -32,6 +32,7 @@ class Config:
     kling_model: str
     kling_mode: str
     kling_duration: str
+    kling_sound: str
     anthropic_api_key: str
     claude_model: str
     dry_run: bool
@@ -74,6 +75,7 @@ def load_config() -> Config:
         kling_model=os.getenv("KLING_MODEL", "kling-v2-6"),
         kling_mode=os.getenv("KLING_MODE", "std"),
         kling_duration=os.getenv("KLING_DURATION", "5"),
+        kling_sound=os.getenv("KLING_SOUND", "on"),
         anthropic_api_key=os.getenv("ANTHROPIC_API_KEY", ""),
         claude_model=os.getenv("CLAUDE_MODEL", "claude-sonnet-4-6"),
         dry_run=os.getenv("DRY_RUN", "false").lower() in {"true", "1", "yes"},

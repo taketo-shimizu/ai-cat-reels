@@ -142,16 +142,8 @@ def cmd_daily(args: argparse.Namespace, cfg: Config) -> int:
     if (rc := cmd_metrics(args, cfg)) != 0:
         logger.warning("daily: metrics failed rc=%d (continue)", rc)
 
-    # collect + analyze (任意)
-    if args.with_collect:
-        if (rc := cmd_collect(args, cfg)) != 0:
-            logger.warning("daily: collect failed rc=%d (continue)", rc)
-        else:
-            analyze_args = argparse.Namespace(limit=10)
-            if (rc := cmd_analyze(analyze_args, cfg)) != 0:
-                logger.warning("daily: analyze failed rc=%d (continue)", rc)
-
-    # plan → generate → publish
+    # plan → generate → publish (reference 収集は方針変更で daily では行わない。
+    # 必要なら collect / analyze を個別コマンドで実行する。)
     if (rc := cmd_plan(args, cfg)) != 0:
         return rc
     gen_args = argparse.Namespace(generation_id=None)
@@ -205,7 +197,6 @@ def build_parser() -> argparse.ArgumentParser:
     subparsers.append(p)
 
     p = sub.add_parser("daily", help="毎日の一連の流れをまとめて実行")
-    p.add_argument("--with-collect", action="store_true")
     p.set_defaults(func=cmd_daily)
     subparsers.append(p)
 

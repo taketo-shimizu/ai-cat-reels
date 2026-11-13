@@ -63,7 +63,7 @@ def test_daily_skips_if_already_posted(monkeypatch, cfg, tmp_db) -> None:
     monkeypatch.setattr(main_module, "cmd_plan", lambda a, c: calls.append("plan") or 0)
 
     import argparse
-    ns = argparse.Namespace(with_collect=False, dry_run=False)
+    ns = argparse.Namespace(dry_run=False)
     rc = main_module.cmd_daily(ns, cfg)
     assert rc == 0
     assert calls == []  # 二重投稿ガードで何も呼ばれない

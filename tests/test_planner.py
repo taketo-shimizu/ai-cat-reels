@@ -31,7 +31,7 @@ def test_plan_today_inserts_generation(monkeypatch, cfg, tmp_db) -> None:
     monkeypatch.setattr(
         planner,
         "_call_claude",
-        lambda c, a, o: {
+        lambda c, o: {
             "idea_ja": "猫が洗濯機に乗る",
             "kling_prompt": "a tabby cat riding a washing machine, 9:16, 5s",
             "negative_prompt": "humans, text",
@@ -54,7 +54,7 @@ def test_plan_today_forces_cat_description_when_missing(monkeypatch, cfg, tmp_db
     monkeypatch.setattr(
         planner,
         "_call_claude",
-        lambda c, a, o: {
+        lambda c, o: {
             "idea_ja": "test",
             "kling_prompt": "a random animal doing stuff",  # tabby 未含
             "negative_prompt": None,

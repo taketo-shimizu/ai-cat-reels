@@ -86,6 +86,7 @@ def test_create_text2video_task(monkeypatch: pytest.MonkeyPatch, cfg) -> None:
     assert captured["json"]["model_name"] == "kling-v2-6"
     assert captured["json"]["aspect_ratio"] == "9:16"
     assert captured["json"]["duration"] == "5"
+    assert captured["json"]["sound"] == "on"
     assert captured["json"]["negative_prompt"] == "no humans"
     assert captured["headers"]["Authorization"].startswith("Bearer ")
 
